@@ -39,7 +39,7 @@ public class EncryptedPasswordUtils {
 
 	private static final byte[] iv = { 22, 33, 11, 44, 55, 99, 66, 77 };
 	private static final SecretKey keySpec = new SecretKeySpec(iv, "DES");
-	
+	//Comentario de prueba
     public static String encryptPassword(String password) {
     	byte[] encrypted = null;
     	try {
