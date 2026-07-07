@@ -38,12 +38,12 @@ import javax.crypto.spec.SecretKeySpec;
 public class EncryptedPasswordUtils {
 
 	private static final byte[] iv = { 22, 33, 11, 44, 55, 99, 66, 77 };
-	private static final SecretKey keySpec = new SecretKeySpec(iv, "DES");
+	private static final SecretKey keySpec = new SecretKeySpec(iv, "AES");
 	
     public static String encryptPassword(String password) {
     	byte[] encrypted = null;
     	try {
-			Cipher desCipher = Cipher.getInstance("DES");
+			Cipher desCipher = Cipher.getInstance("AES");
 			desCipher.init(Cipher.ENCRYPT_MODE, keySpec);
 			encrypted = desCipher.doFinal(password.getBytes()); 	
 		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e) {
@@ -59,7 +59,7 @@ public class EncryptedPasswordUtils {
     	byte[] encrypted = null;
     	String encPassword1 = "";
     	try {
-			Cipher desCipher = Cipher.getInstance("DES");
+			Cipher desCipher = Cipher.getInstance("AES");
 			desCipher.init(Cipher.ENCRYPT_MODE, keySpec);
 			encrypted = desCipher.doFinal(password1.getBytes());
 			encPassword1 = new String(encrypted); 
