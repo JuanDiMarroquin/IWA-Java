@@ -34,6 +34,7 @@ import javax.crypto.spec.SecretKeySpec;
  *
  * @author Kevin A. Lee
  */
+
 @SuppressWarnings("deprecation")
 public class EncryptedPasswordUtils {
 
